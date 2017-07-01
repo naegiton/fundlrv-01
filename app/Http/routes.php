@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+Route::resource('fundtype','F_fundtype_lController');
+Route::get('fundtype-delete/{id?}','F_fundtype_lController@delete');
+
+?>

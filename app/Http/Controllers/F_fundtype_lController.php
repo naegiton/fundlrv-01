@@ -31,7 +31,7 @@ class F_fundtype_lController extends Controller
 
      public  function create(){
 
-        return  view('admin.fundtype.create',['url' => 'fundtype','id' => 0]);
+        return  view('admin.fundtype.create',['url' => 'fundtype','id' => 0,'data' => false]);
      }
 
 
