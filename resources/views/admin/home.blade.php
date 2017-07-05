@@ -14,7 +14,7 @@
 
     <!-- Custom CSS -->
     <link href="{{url('public/theme/dist/css/sb-admin-2.css')}}" rel="stylesheet">
-  
+
     <!-- Custom Fonts -->
     <link href="{{url('public/theme/vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
 
