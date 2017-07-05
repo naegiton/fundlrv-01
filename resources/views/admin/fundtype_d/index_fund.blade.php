@@ -18,27 +18,17 @@
            </tr>
          </thead>
          <tbody>
-
            @foreach ($data as $data)
-
            <tr>
                <th scope="row">{{++$no}}</th>
-               <td>   {{ $data->fundidL}} </td>
+               <td>   {{ $data->fundidL}}</td>
                <td>   {{ $data->fundid}}</td>
               <td>   {{ $data->fundname}}</td>
               <td>  {{ $data->fundname2}}</td>
               <td>
                 <a href="{{ url('fundtype/'.$data->fundid .'/edit') }}"> <i class="fa fa-edit text-success" style="font-size:16px"></i></a>
                 <a href="{{ url('fundtype-delete/'. $data->fundid) }}" onclick="return confirm('ยืนยันการลบ')"  style="font-size:16px"><i class="fa fa-times text-danger" ></i> </a>
-
-                    {{$ck=App\F_Fundtype_d::tdata($data->fundid,'0000')}}
-
-                    @if($ck=='yes')
-                  <a href="{{ url('f_fundtype_d/'. $data->fundid) }}"   style="font-size:16px"><i class="fa fa-file-text text-primary" ></i> </a>
-                 @else
-                    <a href="{{ url('f_fundtype_d/create?fundid='.$data->fundid) }}"   style="font-size:16px"><i class="fa fa-file-text text-primary" ></i> </a>
-                  @endif
-
+                  <a href="{{ url('fundtype-delete/'. $data->fundid) }}"   style="font-size:16px"><i class="fa fa-file-text text-primary" ></i> </a>
               </td>
             </tr>
        @endforeach
