@@ -8,7 +8,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="{{url('public/theme/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-
+	<link href="{{url('public/theme/template_css.css')}}" rel="stylesheet">
     <!-- MetisMenu CSS -->
     <link href="{{url('public/theme/vendor/metisMenu/metisMenu.min.css')}}" rel="stylesheet">
 

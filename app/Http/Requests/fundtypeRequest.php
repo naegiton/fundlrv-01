@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class F_fundtype_lRequest extends Request
+class fundtypeRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,6 +26,7 @@ class F_fundtype_lRequest extends Request
         return [
             'fundname' => 'required',
             'fundname2' => 'required',
+            'accsama' => 'required',
         ];
     }
 
@@ -34,6 +35,7 @@ class F_fundtype_lRequest extends Request
     return [
         'fundname.required' => 'กรุณาป้อนชื่อ ฌาปณกิจ',
         'fundname2.required'  => 'กรุณาป้อน ชื่อย่อ',
+        'accsama.required' => 'กรุณาป้อน เลขที่บัญชีสมาคม',
     ];
 }
 }

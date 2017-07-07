@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class F_fundtype_lRequest extends Request
+class F_fundtype_deRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class F_fundtype_lRequest extends Request
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,16 +24,7 @@ class F_fundtype_lRequest extends Request
     public function rules()
     {
         return [
-            'fundname' => 'required',
-            'fundname2' => 'required',
+            //
         ];
     }
-
-    public function messages()
-{
-    return [
-        'fundname.required' => 'กรุณาป้อนชื่อ ฌาปณกิจ',
-        'fundname2.required'  => 'กรุณาป้อน ชื่อย่อ',
-    ];
-}
 }

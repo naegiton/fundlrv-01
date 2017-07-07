@@ -19,6 +19,6 @@ Route::get('fundtype-delete/{id?}','fundtypeController@delete');
 
 //ประเภทของกองทุน
 Route::resource('fundtype','fundtypeController');
-Route::resource('fundtype_d','fundtype_deController');
+Route::resource('fundtype_de','fundtype_deController');
 
 ?>

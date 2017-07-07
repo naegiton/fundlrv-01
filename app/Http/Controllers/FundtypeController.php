@@ -1,9 +1,6 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Requests\fundtypeRequest;
 use App\fundtype;
@@ -43,8 +40,9 @@ class fundtypeController extends Controller
         return redirect('fundtype');
         */
         $item = new fundtype;
-        $item->fundnamel = $request->input('fundname');
-        $item->fundname2l = $request->input('fundname2');
+        $item->fundname = $request->input('fundname');
+        $item->fundname2 = $request->input('fundname2');
+        $item -> accsama = $request->input('accsama');
         $item->save();
         return redirect('fundtype');
     }
@@ -59,15 +57,16 @@ class fundtypeController extends Controller
     public function update( Request $request, $id){
       echo '<pre>'
       , print_r( $request->all()),'</pre>';
-      $item =  F_fundtype_l::where('fundidL', $id)->first();
-      $item->fundnamel = $request->input('fundname');
-      $item->fundname2l = $request->input('fundname2');
+      $item =  fundtype::where('fundid', $id)->first();
+      $item->fundname = $request->input('fundname');
+      $item->fundname2 = $request->input('fundname2');
+      $item -> accsama= $request->input('accsama');
       $item->save();
       return redirect('fundtype');
     }
 
     public function delete($id){
-      F_fundtype_l::where('fundid',$id)->delete();
+      fundtype::where('fundid',$id)->delete();
       return redirect()->back();
     }
 

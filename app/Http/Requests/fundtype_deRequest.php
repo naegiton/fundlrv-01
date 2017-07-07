@@ -24,8 +24,10 @@ class F_fundtype_lRequest extends Request
     public function rules()
     {
         return [
+
             'fundname' => 'required',
-            'fundname2' => 'required',
+            'fundname2l' => 'required',
+            
         ];
     }
 
@@ -33,7 +35,7 @@ class F_fundtype_lRequest extends Request
 {
     return [
         'fundname.required' => 'กรุณาป้อนชื่อ ฌาปณกิจ',
-        'fundname2.required'  => 'กรุณาป้อน ชื่อย่อ',
+        'fundname2l.required'  => 'กรุณาป้อน ชื่อย่อ',
     ];
 }
 }
