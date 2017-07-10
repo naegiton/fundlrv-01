@@ -43,7 +43,8 @@ class fundtype_deController extends Controller
         return redirect('fundtype_d');
         */
         $item = new fundtype_de;
-        $item->fundid    = $request->input('fundid');
+        $item->fundidd    = $request->input('fundidd');
+		$item->fundid    = $request->input('fundid');
         $item->idoffice  = $request->input('idoffice');
         $item->accsaha   = $request->input('accsaha');
         $item->numpay    = $request->input('numpay');
@@ -55,16 +56,17 @@ class fundtype_deController extends Controller
     }
 
     public function edit($id){
-      $item = fundtype_de::where('fundid', $id)->first();
+      $item = fundtype_de::where('fundidd', $id)->first();
       if( !$item ) return false;
-      return  view('admin.fundtype_d.create',['url' => 'fundtype_de/'. $id ,'id' => $id , 'data' => $item ]);
+      return  view('admin.fundtype_de.create',['url' => 'fundtype_de/'. $id ,'id' => $id , 'data' => $item ]);
 
     }
 
     public function update( Request $request, $id){
       echo '<pre>'
-      , print_r( $request->all()),'</pre>';
-      $item =  fundtype_de::where('fundidL', $id)->first();
+      , print_r( $request->all())
+      ,'</pre>';
+      $item =  fundtype_de::where('fundidd', $id)->first();
       $item->fundid    = $request->input('fundid');
       $item->idoffice  = $request->input('idoffice');
       $item->accsaha   = $request->input('accsaha');
@@ -76,7 +78,7 @@ class fundtype_deController extends Controller
     }
 
     public function delete($id){
-      fundtype_d::where('fundid',$id)->delete();
+      fundtype_de::where('fundid',$id)->delete();
       return redirect()->back();
     }
 

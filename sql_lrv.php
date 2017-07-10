@@ -1,8 +1,9 @@
  <?php
+ echo phpinfo();
 $hostname = "localhost";
 $database = "dbfund_lrv";
 $username = "root";
-$password = "";
+$password = "1234";
 $cone2010 = mysql_pconnect($hostname, $username, $password) or trigger_error(mysql_error(),E_USER_ERROR);
 
 mysql_select_db($database, $cone2010);
@@ -117,10 +118,10 @@ while($a < $num_table ) {
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr class=&quot;info&quot; &gt;<br />
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th &gt;#&lt;/th&gt;<br />
   <?php  for($q=0;$q<=$cf;$q++) {?>
- 
+
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;<?php echo mysql_field_name( $rsfield ,$q) ?>&lt;/th&gt;<br />
   <?php } ?>
- 
+
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th &gt;&lt;a href='{{url('<?php echo $tbname?>/create')}}' &gt;&lt;i class=&quot;fa  fa-plus-circle  text-success&quot; style=&quot;font-size:25px&quot;&gt;&lt;/i&gt; &lt;/a&gt;  &lt;/th&gt;<br />
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br />
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/thead&gt;<br />
@@ -159,7 +160,7 @@ while($a < $num_table ) {
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;hidden&quot; name=&quot;_method&quot; value=&quot;PUT&quot; /&gt;<br />
            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@endif<br />
            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;hidden&quot; name=&quot;_token&quot; value=&quot;{{ csrf_token() }}&quot;&gt;<br />
-    <?php  for($q=0;$q<=$cf;$q++) {?>    
+    <?php  for($q=0;$q<=$cf;$q++) {?>
          <p> &lt;div class=&quot;form-group has-success&quot;&gt;<br />
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label  class=&quot;col-sm-2 control-label&quot;&gt;<?php echo mysql_field_name( $rsfield ,$q) ?>&lt;/label&gt;<br />
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;col-sm-10&quot;&gt;<br />
@@ -182,7 +183,7 @@ while($a < $num_table ) {
       <td align="left" valign="top" bgcolor="#FFFFFF"><?php echo $vstr9; ?></td>
     </tr>
     <tr>
-      <td align="left" valign="top" bgcolor="#FFFFFF">$item =  <?php echo $tbname?>::where('fundidL', $id)->first();<br /><?php echo $vstr10; ?> 
+      <td align="left" valign="top" bgcolor="#FFFFFF">$item =  <?php echo $tbname?>::where('fundidL', $id)->first();<br /><?php echo $vstr10; ?>
         $item-&gt;save();</td>
     </tr>
 </table>

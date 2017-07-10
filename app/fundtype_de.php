@@ -7,11 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class fundtype_de extends Model
 {
     //
-		protected $table = 'fundtype_de';
+	protected $table = 'fundtype_de';
     protected $primaryKey = 'fundidd';
 
-		public static function tdata($fundid,$idoffice){
+		public static function getfundidd($fundid,$idoffice){
 				$data=fundtype_de::where('fundid',$fundid)->where('idoffice', $idoffice)->first();
-				return $data ? 'yes':'no' ;
+				//print_r($data);
+				return $data ? $data->fundidd:'0' ;
 			}
 }

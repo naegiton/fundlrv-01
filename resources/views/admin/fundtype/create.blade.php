@@ -5,7 +5,7 @@
    แก้ไขรายละเอียดงานฌาปนกิจ
  @endsection
 @section('content')
-
+{{ $url}}
     <form class="form-horizontal"  method="post" action="{{url( $url )}}">
 
 	@if( $id != 0)

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class F_fundtype_lRequest extends Request
+class fundtype_deRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,17 +25,23 @@ class F_fundtype_lRequest extends Request
     {
         return [
 
-            'fundname' => 'required',
-            'fundname2l' => 'required',
-            
+				 
+				'accsaha'   => 'required',
+				'numpay'    => 'required',
+				'moneyname' => 'required',
+				'signature' => 'required',
+
         ];
     }
 
     public function messages()
 {
     return [
-        'fundname.required' => 'กรุณาป้อนชื่อ ฌาปณกิจ',
-        'fundname2l.required'  => 'กรุณาป้อน ชื่อย่อ',
+    			 
+    			'accsaha.required'   => 'กรุณาป้อน',
+    			'numpay.required'    => 'กรุณาป้อน',
+    			'moneyname.required' => 'กรุณาป้อน',
+    			'signature.required' => 'กรุณาป้อน',
     ];
 }
 }

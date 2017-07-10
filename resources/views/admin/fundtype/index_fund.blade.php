@@ -33,12 +33,13 @@
 
                 <a href="{{ url('fundtype/'.$data->fundid .'/edit') }}"> <i class="fa fa-edit text-success" style="font-size:16px"></i></a>
                 <a href="{{ url('fundtype-delete/'. $data->fundid) }}" onclick="return confirm('ยืนยันการลบ')"  style="font-size:16px"><i class="fa fa-times text-danger" ></i> </a>
-                    {{$ck=App\fundtype_de::tdata($data->fundid,'0000')}}
-                  @if($ck=='yes')
-                      <a href="{{ url('fundtype_de/'. $data->fundid) }}"   style="font-size:16px"><i class="fa fa-file-text text-primary" ></i> </a>
-                  @else
-                      <a href="{{ url('fundtype_de/create?fundid='.$data->fundid) }}"   style="font-size:16px"><i class="fa fa-file-text text-primary" ></i> </a>
-                   @endif
+                    {{ $fundidd=App\fundtype_de::getfundidd($data->fundid,'0000')}}
+					@if ($fundidd=='0')
+                      <a href="{{ url('fundtype_de/create?fundid='.$data->fundid) }}"   style="font-size:16px"><i class="fa fa-file-text text-primary" ></i> </a>						
+					
+					@else
+                      <a href="{{ url('fundtype_de/'.$fundidd.'/edit?fundid='.$data->fundid) }}"   style="font-size:16px"><i class="fa fa-file-text text-primary" ></i> </a>
+					@endif
               </td>
             </tr>
        @endforeach
