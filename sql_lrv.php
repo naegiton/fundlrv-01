@@ -1,5 +1,5 @@
  <?php
- echo phpinfo();
+// echo phpinfo();
 $hostname = "localhost";
 $database = "dbfund_lrv";
 $username = "root";

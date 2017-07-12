@@ -3,16 +3,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Requests\fundtypeRequest;
-use App\fundtype;
+use App\fundtype_de;
 
-class fundtypeController extends Controller
+class indexadminController extends Controller
 {
             public function index(){
 
-                $data=fundtype::all();
+                $data=fundtype_de::all();
                 $no=0;
 
-               return view('admin.fundtype.index_fund',compact('data','no'));
+               return view('admin.indexadmin.index_fund',compact('data','no'));
             }
 
     /**

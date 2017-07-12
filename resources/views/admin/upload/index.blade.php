@@ -1,7 +1,4 @@
 @extends('admin.home')
-@section('stylesheet')
-    <link href="{{asset('assets/css/admin-upload.css')}}" rel="stylesheet" type="text/css"/>
-@stop
 @section('content')
 <form action="{{url('upload/action')}}" method="post" enctype="multipart/form-data">
 <input type="hidden" name="_token" value="{{ csrf_token() }}">

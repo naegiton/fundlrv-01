@@ -21,7 +21,7 @@ Route::get('fundtype-delete/{id?}','fundtypeController@delete');
 Route::resource('fundtype','fundtypeController');
 Route::resource('fundtype_de','fundtype_deController');
 
-Route::resource('index','indexController');
+Route::resource('indexadmin','indexadminController');
 
 
 Route::controller('upload','UploadController');

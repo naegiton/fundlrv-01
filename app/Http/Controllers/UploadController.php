@@ -15,10 +15,14 @@ class UploadController extends Controller
         if($request->exists('btn-upload')){
             $file = $request->file('uploader');
             $path = 'images/uploads';
-            $filename = $file->getClientOriginalName();
-            $file->move('images/uploads',$file->getClientOriginalName());
+            $fullName = $file->getClientOriginalName();
+	
+			$onlyName = explode('.',$fullName);
+			$newfilename=date('YmdHmmss').'.'.$onlyName[1];
+            $file->move('images/uploads',$newfilename);
+			
             $image = new Images;
-            $image->image_name = $filename;
+            $image->image_name = $newfilename;
             $image->save();
             echo 'Uploaded';
 

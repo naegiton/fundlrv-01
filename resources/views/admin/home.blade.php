@@ -8,7 +8,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="{{url('public/theme/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-	
+
     <!-- MetisMenu CSS -->
     <link href="{{url('public/theme/vendor/metisMenu/metisMenu.min.css')}}" rel="stylesheet">
 
@@ -69,7 +69,7 @@
                     <li>
                         <a href="#"><i class="fa fa-male fa-fw"></i> งานฌาปนกิจ<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a href="index">1.หน้าแรก</a> </li>
+                            <li> <a href="{{url('indexadmin')}}">1.หน้าแรก</a> </li>
                             <li> <a href="#">2.สมัครสมาชิก</a> </li>
                             <li> <a href="#">3.ตรวจสอบเอกสาร</a> </li>
                             <li> <a href="#">4.การชำระเงิน</a> </li>
